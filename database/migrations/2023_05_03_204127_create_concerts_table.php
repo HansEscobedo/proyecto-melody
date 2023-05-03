@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('concerts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->date('date');
+            $table->integer('tickets_on_sale');
+            $table->integer('ticket_price');
             $table->timestamps();
         });
     }
