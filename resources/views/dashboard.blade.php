@@ -23,12 +23,12 @@
                 </div>
 
                 <div>
-                    <a href="#" class="text-center text-black font-bold p-3 bg-red-500 rounded ">Agregar
+                    <a href="#" class="text-center text-black font-bold p-3 bg-red-500 rounded ">Quitar
                         Concierto</a>
                 </div>
 
                 <div>
-                    <a href="#" class="text-center text-black font-bold p-3 bg-red-500 rounded ">Agregar
+                    <a href="#" class="text-center text-black font-bold p-3 bg-red-500 rounded ">Modificar
                         Concierto</a>
                 </div>
             </div>

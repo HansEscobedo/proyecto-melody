@@ -11,17 +11,16 @@ class LoginController extends Controller
         return view('login');
     }
     public function store(Request $request){
-        $messages=makeMessages();
-
+        $messages = makeMessages();
+        // Validación de credenciales
         $this->validate($request,[
-
-            'email'=>['required'],
-            'password'=>['required']
-        ],$messages);
-
-        //if(!auth()->attempt($request->only('email','password'),$request->remember)){
-            //return back()->with('message','Las credenciales son incorrectas');
-        //}
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:8']
+        ], $messages);
+        //dd($request);
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
+            return back()->with('message', 'Las credenciales son incorrectas');
+        }
         return view('dashboard');
 
     }

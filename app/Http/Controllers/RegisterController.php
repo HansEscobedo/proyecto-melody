@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -33,7 +33,7 @@ class RegisterController extends Controller
             'password' => ['required', 'min:8', 'regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\S]+$/']
         ], $messages);
         // Crear al usuario
-        Customer::create([
+        User::create([
             'name' => $request->name,
             'email' => Str::lower($request->email),
             'password' => Hash::make($request->password),

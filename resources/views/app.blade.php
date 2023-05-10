@@ -15,7 +15,7 @@
 
                 <img src="https://drive.google.com/uc?id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" class="w-30 h-20 rounded">
                 {{--<form method="POST" action="{{ route('logout') }}">--}}
-                <form action="{{route('logout')}}" method="POST" >
+                <form action="#" method="POST" >
                     @csrf
                     {{--<button type="submit" class="font-bold uppercase">Cerrar Sesión</button>--}}
                     <button type="submit" class="font-bold uppercase hover:text-white transition">Cerrar Sesión</button>

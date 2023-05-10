@@ -1,4 +1,4 @@
-@extends('app')
+@extends('appc')
 {{--<!DOCTYPE html>--}}
 {{--<html lang="en">--}}
     @section('title')
@@ -47,7 +47,7 @@
                         </div>
                         <button type="submit" onclick="return confirm('¿Está seguro de esta información?')" class="w-full text-dark bg-azul-custom-700 hover:bg-azul-custom-1000 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Registrar</button>
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                            ¿Ya tienes una cuenta? <a href="{{url('/')}}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Inicia sesión</a>
+                            ¿Ya tienes una cuenta? <a href="{{url('/login')}}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Inicia sesión</a>
                         </p>
                     </form>
                 </div>

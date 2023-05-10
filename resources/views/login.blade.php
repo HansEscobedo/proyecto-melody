@@ -1,46 +1,46 @@
-@extends('app')
+@extends('appc')
 @section('title')
-Iniciar Sesión
+    Iniciar Sesión
 @endsection
-
 @section('content')
-<div class="md:flex md:justify-center">
-    <div class="md:w-1/2 bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 class="text-center text-white uppercase font-bold text-3xl p-4">Inicia Sesión en Melody</h2>
-        <form action="{{route('login')}}" method="POST" novalidate>
-            @csrf
-            @if (session('message'))
 
-                <p class="bg-red-500 text-white my-2 rounded-lg text-lg text-center p-2">{{ session('message') }}</p>
-
-            @endif
-            <div class="mb-5">
-                <label for="email" class="mb-2 block uppercase text-white font-bold">
-                    Correo Electrónico
-                </label>
-                <input id="email" name="email" placeholder="correo@correo.com"
-                    class="border p-2 rounded-lg w-full
-            @error('email') border-red-600
-            @enderror">
-                @error('email')
-                    <p class="bg-red-500 text-white my-2 rounded-lg text-lg text-center p-2">{{ $message }}</p>
-                @enderror
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img class="h-20 mr-2 w-27" src="https://drive.google.com/uc?export=download&id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" alt="logo">
+        </a>
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Inicie sesión en su cuenta
+                </h1>
+                <form class="space-y-4 md:space-y-6" action="{{route('login')}}" method="POST" novalidate>
+                    @csrf
+                    @if (session('message'))
+                        <p class="p-2 my-2 text-lg text-center text-white bg-red-500 rounded-lg">{{ session('message') }}</p>
+                    @endif
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example@email.com" required="">
+                    @error('email')
+                        <p class="p-2 my-2 text-sm text-center text-white bg-red-500 rounded-lg">{{ $message }}</p>
+                    @enderror
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                    @error('password')
+                        <p class="p-2 my-2 text-sm text-center text-white bg-red-500 rounded-lg">{{ $message }}</p>
+                    @enderror
+                    </div>
+                    <button type="submit" class="w-full text-white bg-azul-custom-1000 hover:bg-azul-custom-1000 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Iniciar Sesión</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        ¿No tienes una cuenta? <a href="/registerCustomer" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Regístrate</a>
+                    </p>
+                </form>
             </div>
-            <div class="mb-5">
-                <label for="password" class="mb-2 block uppercase text-white font-bold">
-                    Contraseña
-                </label>
-                <input id="password" name="password" type="password"
-                    class="border p-2 rounded-lg w-full
-            @error('password') border-red-600
-            @enderror">
-                @error('password')
-                    <p class="bg-red-500 text-white my-2 rounded-lg text-lg text-center p-2">{{ $message }}</p>
-                @enderror
-            </div>
-            <input type="submit" value="Registrar"
-                class="bg-yellow-400 hover:bg-yellow-500 transition-colors cursor-pointer uppercase font-bold text-black rounded w-full p-3">
-        </form>
+        </div>
     </div>
-</div>
+    </section>
+
 @endsection
