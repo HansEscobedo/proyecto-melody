@@ -1,2 +1,10 @@
-<h1>Hola Mund</h1>
-<a href="{{route('registerCustomer')}}">registrar</a>
+@extends('app')
+@section('title')
+    Inicio
+@endsection
+
+@section('content')
+    <h1 class="text-3xl text-center uppercase font-bold"> Bienvenido a Melody</h1>
+
+@endsection
+

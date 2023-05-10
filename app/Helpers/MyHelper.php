@@ -11,7 +11,7 @@ function makeMessages()
         'email.email' => 'El correo no es válido',
         'password.required' => 'Debe completar el campo Contraseña',
         'password.min' => 'La contraseña posee menos de 8 caracteres',
-        'password.regex' => 'La contraseña ingresada no es alfanumérica'
+        'password.regex' => 'La contraseña ingresada no es alfanumérica',
     ];
 
     return $messages;

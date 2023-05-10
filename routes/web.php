@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,12 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('registerCustomer',[RegisterController::class,'index'])->name('registerCustomer');
 Route::post('/registerCustomer',[RegisterController::class, 'store']);
 
 Route::get('welcome',[RegisterController::class,'back'])->name('welcome');
+///Prueba
+Route::get('/login', [LoginController::class,'index'])->name('login');
+Route::post('/login', [LoginController::class,'store']);
