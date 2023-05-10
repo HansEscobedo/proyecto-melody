@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use Resources\Views;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +18,22 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return view('auth.login');
+})->name('login');
+//Login routes
+
+Route::post('/', [LoginController::class, 'store']);
+
+Route::get('/test', function () {
+    return view('layouts.dashboard');
+})->name('test');
 
 Route::get('registerCustomer',[RegisterController::class,'index'])->name('registerCustomer');
 Route::post('/registerCustomer',[RegisterController::class, 'store']);
 
 Route::get('welcome',[RegisterController::class,'back'])->name('welcome');
-///Prueba
-Route::get('/login', [LoginController::class,'index'])->name('login');
-Route::post('/login', [LoginController::class,'store']);
+
+
+
+
+

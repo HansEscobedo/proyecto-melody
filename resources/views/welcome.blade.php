@@ -1,10 +1,13 @@
-@extends('app')
-@section('title')
-    Inicio
-@endsection
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @vite('resources/css/app.css')
+    <title></title>
+</head>
+<body>
 
-@section('content')
-    <h1 class="text-3xl text-center uppercase font-bold"> Bienvenido a Melody</h1>
-
-@endsection
-
+</body>
+</html>

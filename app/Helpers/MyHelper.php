@@ -1,4 +1,8 @@
 <?php
+use Carbon\Carbon;
+use App\Models\Concert;
+
+
 
 function makeMessages()
 {
@@ -16,3 +20,30 @@ function makeMessages()
 
     return $messages;
 }
+
+function validDate($date)
+{
+    $fechaActual = date("d-m-Y");
+    $fechaVerificar = Carbon::parse($date);
+
+    if ($fechaVerificar->lessThanOrEqualTo($fechaActual)) {
+        return true;
+    }
+
+    return false;
+}
+
+function existConcertDay($date_concert)
+{
+    $concerts = Concert::getConcerts();
+    $date = date($date_concert);
+
+    foreach ($concerts as $concert) {
+
+        if ($concert->date == $date) {
+            return true;
+        }
+    }
+    return false;
+}
+
