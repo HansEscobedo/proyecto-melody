@@ -21,6 +21,7 @@ function makeMessages()
     return $messages;
 }
 
+
 function validDate($date)
 {
     $fechaActual = date("d-m-Y");
@@ -46,3 +47,4 @@ function existConcertDay($date_concert)
     }
     return false;
 }
+
