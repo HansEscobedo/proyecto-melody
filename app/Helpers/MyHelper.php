@@ -1,26 +1,25 @@
 <?php
-
 use Carbon\Carbon;
 use App\Models\Concert;
+
+
 
 function makeMessages()
 {
     $messages = [
-        'name.required' => 'El campo nombre es obligatorio.',
-        'email.required' => 'El campo correo electrónico es obligatorio.',
-        'password.required' => 'El campo contraseña es obligatorio.',
-        'price.required' => 'El campo precio es obligatorio.',
-        'date.required' => 'El campo fecha es obligatorio.',
-        'stock.required' => 'El campo stock es obligatorio.',
-        'stock.between' => 'El rango de entradas es de 100 y 400.',
-        'email.email' => 'Ingrese una dirección de correo electrónico válida',
-        'email.unique' => 'El correo electrónico ya esta registrado',
-        'password.min' => 'La contraseña debe tener al menos :min caracteres.',
+        'name.required' => 'Debe completar el campo Tu nombre.',
+        'name.min' => 'El largo del nombre es inferior a 3 caracteres',
+        'name.alpha' => 'El nombre contiene carácteres no permitidos. Ingrese solo letras',
+        'email.required' => 'Debe completar el campo Correo electrónico',
+        'email.unique' => 'El correo ingresado ya existe en el sistema, intente iniciar sesión',
+        'email.email' => 'El correo no es válido',
+        'password.required' => 'Debe completar el campo Contraseña',
+        'password.min' => 'La contraseña posee menos de 8 caracteres',
+        'password.regex' => 'La contraseña ingresada no es alfanumérica',
     ];
 
     return $messages;
 }
-
 
 function validDate($date)
 {
