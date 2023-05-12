@@ -15,7 +15,7 @@
 
                 <img src="https://drive.google.com/uc?id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" class="w-30 h-20 rounded">
                 {{--<form method="POST" action="{{ route('logout') }}">--}}
-                <form action="#" method="POST" >
+                <form action="{{route('logout')}}" method="POST" >
                     @csrf
                     {{--<button type="submit" class="font-bold uppercase">Cerrar Sesión</button>--}}
                     <button type="submit" class="font-bold uppercase hover:text-white transition">Cerrar Sesión</button>
@@ -28,7 +28,7 @@
                 <nav class="flex flex-col gap-2 items-center">
                     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
                     {{-- <a href="{{ route('login') }}" class="font-bold uppercase hover:text-white">Iniciar Sesión</a> --}}
-                    <a href="{{ route('login') }}" class="font-bold uppercase hover:text-white">Iniciar Sesión</a>
+                    {{--<a href="{{ route('login') }}" class="font-bold uppercase hover:text-white">Iniciar Sesión</a>--}}
                     <a href="{{ route('registerCustomer') }}" class="font-bold uppercase hover:text-white">Crear Cuenta</a>
                 </nav>
             @endguest

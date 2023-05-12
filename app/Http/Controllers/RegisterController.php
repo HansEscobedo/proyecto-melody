@@ -29,7 +29,7 @@ class RegisterController extends Controller
         // Validación
         $this->validate($request, [
             'name' => ['required', 'alpha', 'min:2'],
-            'email' => ['required', 'email', 'unique:customers'],
+            'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'min:8', 'regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\S]+$/']
         ], $messages);
         // Crear al usuario

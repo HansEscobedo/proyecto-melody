@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ConcertController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,9 @@ Route::get('welcome',[RegisterController::class,'back'])->name('welcome');
 ///Prueba
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'store']);
+
+Route::post('/logout', [LogoutController::class,'store'])->name('logout');
+
+Route::get('/dashboard', [ConcertController::class, 'index'])->name('dashboard');
+Route::get('createConcert', [ConcertController::class, 'create'])->name('create_concert');
+Route::post('createConcert', [ConcertController::class, 'store'])->name('createConcert');
