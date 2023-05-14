@@ -18,8 +18,15 @@ use App\Http\Controllers\ConcertController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return view('auth.login');
+})->name('login');
+//Login routes
+
+Route::post('/', [LoginController::class, 'store']);
+
+Route::get('/test', function () {
+    return view('layouts.dashboard');
+})->name('test');
 
 Route::get('registerCustomer',[RegisterController::class,'index'])->name('registerCustomer');
 Route::post('/registerCustomer',[RegisterController::class, 'store']);

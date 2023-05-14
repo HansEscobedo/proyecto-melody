@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function index(){
-        //dd('Desde login controller');
+    public function index()
+    {
         return view('login');
     }
     public function store(Request $request){
