@@ -22,7 +22,9 @@ class LoginController extends Controller
         if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('message', 'Las credenciales son incorrectas');
         }
+        toastr()->success('¡Has iniciado sesión en melody!', 'Inicio de sesión completado');
         return view('dashboard');
+
 
     }
 }
