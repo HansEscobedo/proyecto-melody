@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('auth.login');
     }
     public function store(Request $request){
         $messages = makeMessages();
@@ -20,7 +20,7 @@ class LoginController extends Controller
         ], $messages);
         //dd($request);
         if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
-            return back()->with('message', 'Las credenciales son incorrectas');
+            return back()->with('message', 'Usuario no registrado o contraseña incorrecta');
         }
         toastr()->success('¡Has iniciado sesión en melody!', 'Inicio de sesión completado');
         return view('dashboard');

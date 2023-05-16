@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('registerCustomer');
+        return view('auth.register');
     }
 
     public function back()

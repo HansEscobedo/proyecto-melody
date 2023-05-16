@@ -12,23 +12,23 @@
 
     @if (auth()->user()->role === 2)
         {{-- Opciones Administrador --}}
-        <div class="md:flex-col md:justify-center bg-azul-custom-600  p-6 rounded-lg shadow-lg ">
-            <h2 class="text-center text-white uppercase font-bold text-3xl p-6">Selecciona una opción</h2>
+        <div class="p-6 rounded-lg shadow-lg md:flex-col md:justify-center bg-blue-custom-600 ">
+            <h2 class="p-6 text-3xl font-bold text-center text-white uppercase">Selecciona una opción</h2>
             <div class="md:flex md:justify-evenly">
                 <div>
                     <a href="{{route('create_concert')}}"
-                        class="text-center text-black font-bold p-3 bg-red-custom-200 rounded hover:bg-red-custom-200 transition">Agregar
+                        class="p-3 font-bold text-center text-black transition rounded bg-red-custom-200 hover:bg-red-custom-200">Agregar
                         Concierto</a>
 
                 </div>
 
                 <div>
-                    <a href="#" class="text-center text-black font-bold p-3 bg-red-500 rounded ">Quitar
+                    <a href="#" class="p-3 font-bold text-center text-black bg-red-500 rounded ">Quitar
                         Concierto</a>
                 </div>
 
                 <div>
-                    <a href="#" class="text-center text-black font-bold p-3 bg-red-500 rounded ">Modificar
+                    <a href="#" class="p-3 font-bold text-center text-black bg-red-500 rounded ">Modificar
                         Concierto</a>
                 </div>
             </div>

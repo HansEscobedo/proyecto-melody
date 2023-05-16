@@ -28,8 +28,8 @@ Route::get('/test', function () {
     return view('layouts.dashboard');
 })->name('test');
 
-Route::get('registerCustomer',[RegisterController::class,'index'])->name('registerCustomer');
-Route::post('/registerCustomer',[RegisterController::class, 'store']);
+Route::get('register',[RegisterController::class,'index'])->name('register');
+Route::post('/register',[RegisterController::class, 'store']);
 
 Route::get('welcome',[RegisterController::class,'back'])->name('welcome');
 ///Prueba
