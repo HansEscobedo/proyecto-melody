@@ -15,8 +15,8 @@ class LoginController extends Controller
         $messages = makeMessages();
         // Validación de credenciales
         $this->validate($request,[
-            'email' => ['required', 'email'],
-            'password' => ['required', 'min:8']
+            'email' => 'required',
+            'password' => 'required'
         ], $messages);
         //dd($request);
         if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {

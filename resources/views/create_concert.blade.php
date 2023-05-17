@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <title>Melody | Crear un concierto</title>
-    <head>
-        @vite('resources/css/app.css')
-    </head>
+@extends('app')
 
+@section('title')
+    Dashboard
+@endsection
 
+@section('content')
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <img class="w-40 h-19" src="https://drive.google.com/uc?id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" alt="logo">
-            </a>
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -48,10 +45,10 @@
                                  <p class="p-2 my-2 text-sm text-center text-white bg-red-500 rounded-lg">{{ $message }}</p>
                             @enderror
                         </div>
-                        <button type="submit" onclick="return confirm('¿Está seguro de esta información?')" class="w-full text-white bg-blue-custom-700 hover:bg-blue-custom-1000 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Registrar</button>
+                        <button type="submit" onclick="return confirm('¿Está seguro de esta información?')" class="w-full text-white bg-blue-600 hover:bg-blue-custom-1000 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Registrar</button>
                     </form>
                 </div>
             </div>
         </div>
       </section>
-</html>
+@endsection

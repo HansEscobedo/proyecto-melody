@@ -51,7 +51,7 @@ class ConcertController extends Controller
             'ticket_price' => $request->ticket_price
         ]);
 
-        toastr()->success('El concierto fue creado con éxito', 'Concierto creado!');
+        toastr()->success('El concierto fue creado con éxito', '¡Concierto creado!');
 
         return redirect()->route('dashboard');//dashboard
     }

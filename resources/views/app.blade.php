@@ -3,13 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
     @vite('resources/css/app.css')
     @vite('resources/css/app.js')
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Melody - @yield('title')</title>
 </head>
-<body class="bg-white">
-    <header class="p-5 border-b border-blue-custom-700 bg-blue-custom-600">
+<body class="bg-gray-50">
+    <header class="p-5 bg-gray-200 border-b border-blue-custom-700">
         <div class="container flex items-center justify-between mx-auto">
             @auth
 
@@ -33,10 +45,10 @@
         </div>
     </header>
     <main class="container mx-auto mt-10">
-        <h2 class="mb-10 text-3xl font-bold text-center text-white uppercase">@yield('title-page')</h2>
+        <h2 class="mb-10 text-3xl font-bold text-center text-black uppercase">@yield('title-page')</h2>
         @yield('content')
     </main>
-    <footer class="p-5 font-bold text-center text-gray-900 uppercase">
+    <footer class="p-5 font-bold text-center text-gray-900 uppercase ">
         Melody - Todos los derechos reservados {{ now()->year }}
     </footer>
 </body>

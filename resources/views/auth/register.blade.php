@@ -1,15 +1,13 @@
-@extends('app')
-{{--<!DOCTYPE html>--}}
-{{--<html lang="en">--}}
+<!DOCTYPE html>
+<html lang="en">
     @section('title')
     Crea una cuenta
     @endsection
-    {{--<title>Melody | Crea una cuenta</title>--}}
-    {{--<head>
+    <title>Melody | Crea una cuenta</title>
+    <head>
         @vite('resources/css/app.css')
-    </head>--}}
+    </head>
 
-    @section('content')
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <img class="w-40 h-19" src="https://drive.google.com/uc?id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" alt="logo">
@@ -54,5 +52,4 @@
             </div>
         </div>
       </section>
-      @endsection
-{{--</html>--}}
+</html>
