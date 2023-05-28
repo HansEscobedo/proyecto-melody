@@ -12,7 +12,7 @@ function makeMessages()
     $messages = [
         'name.required' => 'Debe completar el campo Nombre.',
         'name.min' => 'El largo del nombre es inferior a :min caracteres',
-        'name.regex' => 'El nombre contiene carácteres no permitidos. Ingrese solo letras',
+        'name.regex' => 'El nombre contiene caracteres no permitidos. Ingrese solo letras',
         'email.required' => 'Debe completar el campo Correo electrónico',
         'email.unique' => 'El correo ingresado ya existe en el sistema, intente iniciar sesión',
         'email.email' => 'El correo no es válido',
@@ -22,12 +22,14 @@ function makeMessages()
         'password.alpha_num' => 'La contraseña ingresada no es alfanumérica',
         'date.required' => 'Debe completar el campo Fecha del Concierto',
         'date.unique' => 'Ya hay un concierto agendado para el día ingresado',
-        'date.after' => 'La fecha debe ser despues de la fecha actual',
-        'tickets_on_sale.required' => 'Debe completar el campo Cantidad de tickets',
+        'date.after' => 'La fecha debe ser después de la fecha actual',
+        'tickets_on_sale.required' => 'Debe completar el campo Cantidad de entradas',
         'tickets_on_sale.numeric' => 'El valor ingresado no es numérico o es inferior a 100 o superior a 400',
         'tickets_on_sale.between' => 'El valor ingresado no es numérico o es inferior a 100 o superior a 400',
-        'ticket_price.required' => 'Debe completar el campo Costo del ticket',
-        'ticket_price.min' => 'El valor de la entrada no puede ser inferior a $20.000 pesos'
+        'ticket_price.required' => 'Debe completar el campo Costo de las entradas',
+        'ticket_price.min' => 'El valor de la entrada no puede ser inferior a $20.000 pesos',
+        'ticket_price.max' => 'El valor de la entrada supera el máximo',
+        'ticket_price.numeric' => 'El valor ingresado no es numérico'
     ];
 
     return $messages;

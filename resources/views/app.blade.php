@@ -6,9 +6,9 @@
     <style>
         footer {
             position: absolute;
-            bottom: 0;
+            bottom: 30;
             width: 100%;
-            height: 40px;
+
         }
 
         .text-center {
@@ -49,6 +49,7 @@
         @yield('content')
     </main>
     <footer class="p-5 font-bold text-center text-gray-900 uppercase ">
+        <br><br><br><br><br><br><br><br><br><br>
         Melody - Todos los derechos reservados {{ now()->year }}
     </footer>
 </body>
