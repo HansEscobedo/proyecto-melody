@@ -63,3 +63,22 @@ function existConcertDay($concertDate)
 
     return false;
 }
+
+function verifyStock($id, $quantity)
+{
+    $concert = Concert::find($id);
+
+    if ($quantity > $concert->stock) {
+        return false;
+    }
+    return true;
+}
+
+function discountStock($id, $quantity)
+{
+    $concert = Concert::find($id);
+
+    $concert->stock -= $quantity;
+    $concert->save();
+    return true;
+}

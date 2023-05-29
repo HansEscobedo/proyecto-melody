@@ -23,7 +23,7 @@ class LoginController extends Controller
             return back()->with('message', 'Usuario no registrado o contraseña incorrecta');
         }
         toastr()->success('¡Has iniciado sesión en melody!', 'Inicio de sesión completado');
-        return view('dashboard');
+        return redirect()->route('dashboard');
 
 
     }

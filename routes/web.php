@@ -28,16 +28,26 @@ Route::get('/test', function () {
     return view('layouts.dashboard');
 })->name('test');
 
+// Register routes
 Route::get('register',[RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class, 'store']);
 
 Route::get('welcome',[RegisterController::class,'back'])->name('welcome');
-///Prueba
+
+// Login routes
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'store']);
-
 Route::post('/logout', [LogoutController::class,'store'])->name('logout');
 
 Route::get('/dashboard', [ConcertController::class, 'index'])->name('dashboard');
+
 Route::get('createConcert', [ConcertController::class, 'create'])->name('create_concert');
 Route::post('createConcert', [ConcertController::class, 'store'])->name('createConcert');
+Route::post('concert-search', [ConcertController::class, 'searchDate'])->name('concert.search');
+
+Route::get('/concert-list', [ConcertController::class, 'concertsList'])->name('concert.list');
+
+// Order Concerts
+Route::get('/concert-order/{id}', [DetailOrderController::class, 'create'])->name('concert.order');
+Route::post('/concert-order/{id}', [DetailOrderController::class, 'store'])->name('concert.order.pay');
+Route::get('/my-concerts', [ConcertController::class, 'myConcerts'])->name('client.concerts');

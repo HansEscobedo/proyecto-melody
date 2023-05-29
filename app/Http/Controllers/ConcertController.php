@@ -11,9 +11,18 @@ class ConcertController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
+
     public function index()
     {
-        return view('dashboard');//dashboard
+        $user = auth()->user();
+        if ($user->role == 2) {
+            $concerts = Concert::getConcerts();
+            return view('admin_dashboard', [
+                'concerts' => $concerts,
+            ]);
+        } else {
+            return view('client_dashboard');
+        }
     }
 
     public function create()
@@ -54,5 +63,43 @@ class ConcertController extends Controller
         toastr()->success('El concierto fue creado con éxito', '¡Concierto creado!');
 
         return redirect()->route('dashboard');//dashboard
+    }
+
+    public function searchDate(Request $request)
+    {
+        $messages = makeMessages();
+        $this->validate($request, [
+            'date_search' => ['required']
+        ], $messages);
+
+        $date = date($request->date_search);
+        if ($date == null) {
+            $concerts = Concert::getConcerts();
+            return view('index', [
+                'concerts' => $concerts,
+            ]);
+        } else {
+            $concerts = Concert::where('date', "=", $date)->simplePaginate(1);
+            return view('index', [
+                'concerts' => $concerts
+            ]);
+        }
+    }
+
+
+    public function concertsList()
+    {
+        $concerts = Concert::getConcerts();
+        return view('index', [
+            'concerts' => $concerts,
+        ]);
+    }
+
+    public function myConcerts()
+    {
+        // dd(auth()->user());
+        return view('my_concerts', [
+            'user' => auth()->user()
+        ]);
     }
 }
