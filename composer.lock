@@ -2387,6 +2387,7 @@
             "time": "2023-02-08T01:06:31+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "phenx/php-font-lib",
             "version": "0.5.4",
             "source": {
@@ -2477,6 +2478,8 @@
             "time": "2022-09-06T12:16:56+00:00"
         },
         {
+=======
+>>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
             "name": "php-flasher/flasher",
             "version": "v1.13.1",
             "source": {
