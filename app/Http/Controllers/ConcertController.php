@@ -8,12 +8,6 @@ use Illuminate\Http\Request;
 
 class ConcertController extends Controller
 {
-<<<<<<< HEAD
-
-    public function index()
-    {
-        return view('#');//dashboard
-=======
     public function __construct(){
         $this->middleware('auth');
     }
@@ -29,16 +23,11 @@ class ConcertController extends Controller
         } else {
             return view('client_dashboard');
         }
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
     }
 
     public function create()
     {
-<<<<<<< HEAD
-        return view('concertViews.create_concert');
-=======
         return view('create_concert');
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
     }
 
     public function store(Request $request)
@@ -71,11 +60,6 @@ class ConcertController extends Controller
             'ticket_price' => $request->ticket_price
         ]);
 
-<<<<<<< HEAD
-        toastr()->success('El concierto fue creado con éxito', 'Concierto creado!');
-
-        return redirect()->route('createConcert');//dashboard
-=======
         toastr()->success('El concierto fue creado con éxito', '¡Concierto creado!');
 
         return redirect()->route('dashboard');//dashboard
@@ -117,6 +101,5 @@ class ConcertController extends Controller
         return view('my_concerts', [
             'user' => auth()->user()
         ]);
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
     }
 }
