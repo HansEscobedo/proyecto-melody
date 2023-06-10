@@ -17,7 +17,8 @@ class DetailOrder extends Model
         'concert_id'
     ];
 
-    public function concertDates(){
+    public function concertDates()
+    {
         return $this->belongsTo(Concert::class, 'concert_id');
     }
 }
