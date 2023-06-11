@@ -63,7 +63,7 @@ class VoucherController extends Controller
             'date' => date("d-m-Y"),
         ];
 
-        $view_html = view('voucher.pdf', $data)->render();
+        $view_html = view('voucher.pdf', $data)->render();  //crear vista pdf ---10/06/23
 
         $domPDF->loadHtml($view_html);
 
@@ -85,7 +85,7 @@ class VoucherController extends Controller
             'date' => date("Y-m-d")
         ]);
 
-        return view('client.order_success', [
+        return view('client.order_success', [ // Crear la vista-------10/06/23
             'detail_order' => $detail,
             'voucher' => $voucher
         ]);

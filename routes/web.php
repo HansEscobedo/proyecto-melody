@@ -5,6 +5,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ConcertController;
+use App\Http\Controllers\DetailOrderController;
+use App\Http\Controllers\VoucherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use App\Http\Controllers\ConcertController;
 
 Route::get('/', function () {
     return view('auth.login');
-})->name('login');
+})->name('home');
 //Login routes
 
 Route::post('/', [LoginController::class, 'store']);
@@ -51,3 +53,8 @@ Route::get('/concert-list', [ConcertController::class, 'concertsList'])->name('c
 Route::get('/concert-order/{id}', [DetailOrderController::class, 'create'])->name('concert.order');
 Route::post('/concert-order/{id}', [DetailOrderController::class, 'store'])->name('concert.order.pay');
 Route::get('/my-concerts', [ConcertController::class, 'myConcerts'])->name('client.concerts');
+
+// Voucher
+Route::get('/detail-order/{id}', [VoucherController::class, 'generatePDF'])->name('generate.pdf');
+Route::get('descargar-pdf/{id}', [VoucherController::class, 'downloadPDF'])->name('pdf.descargar');
+Route::get('/pdf', [VoucherController::class, 'pdf'])->name('pdf.example');
