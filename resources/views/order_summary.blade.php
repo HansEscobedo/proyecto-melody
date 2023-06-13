@@ -1,83 +1,9 @@
+@extends('app')
 @section('title')
 @endsection
 
 @section('content')
     {{-- Barra de progreso compra --}}
-    <div class="max-w-xl mx-auto my-4 border-b-2 pb-4 bg-gray-100 rounded p-4 mb-8">
-        <div class="flex pb-3">
-            <div class="flex-1">
-            </div>
-
-            <div class="flex-1">
-                <div class="w-10 h-10 bg-green-500 mx-auto rounded-full text-lg text-white flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="3" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                    </svg>
-                </div>
-            </div>
-
-
-            <div class="w-1/4 align-center items-center align-middle content-center flex">
-                <div class="w-full bg-green-400 rounded items-center align-middle align-center flex-1">
-                    <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded "
-                        style="width: 100%"></div>
-                </div>
-            </div>
-
-
-            <div class="flex-1">
-                <div
-                    class="w-10 h-10 bg-green-500 mx-auto rounded-full text-lg text-white flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="3" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="w-1/4 align-center items-center align-middle content-center flex">
-                <div class="w-full bg-green-400 rounded items-center align-middle align-center flex-1">
-                    <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded "
-                        style="width: 100%"></div>
-                </div>
-            </div>
-
-            <div class="flex-1">
-                <div
-                    class="w-10 h-10 bg-green-500 mx-auto rounded-full text-lg text-white flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="3" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="flex-1">
-            </div>
-
-        </div>
-
-        <div class="flex text-xs content-center text-center">
-            <div class="w-1/3">
-                <h3 class="status-font font-semibold text-lg">Selecciona tu concierto</h3>
-            </div>
-
-            <div class="w-1/3">
-                <h3 class="status-font font-semibold text-lg">Método de pago</h3>
-            </div>
-
-            <div class="w-1/3">
-                <h3 class="status-font font-semibold text-lg">Detalle</h3>
-            </div>
-        </div>
-    </div>
 
 
     {{-- Detalle de la compra --}}
@@ -154,14 +80,14 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
+                <div class="flex items-center justify-center p-6 space-x-2  rounded-b dark:border-gray-600">
+                    <a href="{{ route('dashboard') }}" type="button"
+                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                        Finalizar
+                    </a>
+                </div>
             </div>
-            <div class="flex items-center justify-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
 
-                <a href="{{ route('dashboard') }}" type="button"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                    Finalizar
-                </a>
-            </div>
         </div>
     </div>
 

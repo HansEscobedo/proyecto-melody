@@ -58,3 +58,4 @@ Route::get('/my-concerts', [ConcertController::class, 'myConcerts'])->name('clie
 Route::get('/detail-order/{id}', [VoucherController::class, 'generatePDF'])->name('generate.pdf');
 Route::get('descargar-pdf/{id}', [VoucherController::class, 'downloadPDF'])->name('pdf.descargar');
 Route::get('/pdf', [VoucherController::class, 'pdf'])->name('pdf.example');
+

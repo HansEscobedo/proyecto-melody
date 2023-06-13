@@ -68,7 +68,7 @@ function verifyStock($id, $quantity)
 {
     $concert = Concert::find($id);
 
-    if ($quantity > $concert->stock) {
+    if ($quantity > $concert->tickets_on_sale){
         return false;
     }
     return true;
@@ -78,7 +78,7 @@ function discountStock($id, $quantity)
 {
     $concert = Concert::find($id);
 
-    $concert->stock -= $quantity;
+    $concert->tickets_on_sale -= $quantity;
     $concert->save();
     return true;
 }

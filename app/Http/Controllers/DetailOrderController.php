@@ -58,7 +58,7 @@ class DetailOrderController extends Controller
         $detail_order = DetailOrder::create([
             'reservation_number' => $request->reservation_number,
             'quantity' => $request->quantity,
-            'total' => $request->total,
+            'total' => $request->total*$request->quantity,
             'payment_method' => $request->pay_method,
             'user_id' => auth()->user()->id,
             'concert_id' => $id
