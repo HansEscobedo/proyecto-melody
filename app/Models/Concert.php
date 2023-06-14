@@ -14,10 +14,6 @@ class Concert extends Model
         'tickets_on_sale',
         'ticket_price'
     ];
-<<<<<<< HEAD
-
-=======
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
     public static function getConcerts()
     {
         return self::all();
