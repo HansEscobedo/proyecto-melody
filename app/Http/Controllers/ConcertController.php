@@ -67,10 +67,8 @@ class ConcertController extends Controller
 
     public function searchDate(Request $request)
     {
-        $messages = makeMessages();
-        $this->validate($request, [
-            'date_search' => ['required']
-        ], $messages);
+
+
 
         $date = date($request->date_search);
         if ($date == null) {

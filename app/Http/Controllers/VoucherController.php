@@ -5,6 +5,7 @@ use Dompdf\Dompdf;
 use App\Models\Voucher;
 use App\Models\DetailOrder;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -63,7 +64,7 @@ class VoucherController extends Controller
             'date' => date("d-m-Y"),
         ];
 
-        $view_html = view('voucher.pdf', $data)->render();
+        $view_html = view('receipt_pdf', $data)->render();  //crear vista pdf ---10/06/23
 
         $domPDF->loadHtml($view_html);
 
@@ -85,7 +86,7 @@ class VoucherController extends Controller
             'date' => date("Y-m-d")
         ]);
 
-        return view('client.order_success', [
+        return view('order_summary', [ // Crear la vista-------10/06/23
             'detail_order' => $detail,
             'voucher' => $voucher
         ]);

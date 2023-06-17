@@ -21,7 +21,6 @@ class DetailOrder extends Model
     {
         return $this->belongsTo(Concert::class, 'concert_id');
     }
-
     public function voucher()
     {
         return $this->hasOne(Voucher::class, 'detail_order_id');

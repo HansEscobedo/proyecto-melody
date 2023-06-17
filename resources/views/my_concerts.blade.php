@@ -119,11 +119,11 @@
                                     @endswitch
                                 </p>
                             </td>
-                            <td class="px-6 py-4">
+                            {{--<td class="px-6 py-4">
                                 <a class="w-auto h-auto" href="{{ route('pdf.descargar', ['id' => $detail_order->voucher->id]) }}">
                                     <img class="mx-auto" src="{{ asset('img/pdf.png') }}" alt="pdf-image">
                                 </a>
-                            </td>
+                            </td>--}}
                         </tr>
                     @endforeach
                 </tbody>

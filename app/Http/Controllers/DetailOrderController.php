@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Concert;
+use App\Models\DetailOrder;
 use Illuminate\Http\Request;
 
 class DetailOrderController extends Controller
@@ -21,7 +23,7 @@ class DetailOrderController extends Controller
     public function create($id)
     {
         $concert = Concert::find($id);
-        return view('client.create', [
+        return view('create_order', [ //Cambiar la vista ya que no se tiene referenciada
             'concert' => $concert
         ]);
     }
@@ -54,9 +56,9 @@ class DetailOrderController extends Controller
 
         //Crear la orden de compra
         $detail_order = DetailOrder::create([
-            'reservation_number' => '1234',
+            'reservation_number' => $request->reservation_number,
             'quantity' => $request->quantity,
-            'total' => $request->total,
+            'total' => $request->total*$request->quantity,
             'payment_method' => $request->pay_method,
             'user_id' => auth()->user()->id,
             'concert_id' => $id

@@ -12,6 +12,6 @@ class Voucher extends Model
         'pdf_name',
         'path',
         'date',
-        'order_id'
+        'detail_order_id'
     ];
 }
