@@ -90,10 +90,12 @@ class ConcertController extends Controller
 
     public function concertsList()
     {
+        $totalConcert=Concert::getConcerts();
         $currentDate = date('Y-m-d');
         $concerts = Concert::where('date', '>', $currentDate)->get();
         return view('index', [
             'concerts' => $concerts,
+            'totalConcert' => $totalConcert
         ]);
     }
 
