@@ -36,7 +36,25 @@
                                     Medio de pago
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{ $detail_order->payment_method }}
+
+                                    @switch($detail_order->payment_method)
+                                        @case('1')
+                                            Efectivo
+                                        @break
+
+                                        @case('2')
+                                            Transferencia
+                                        @break
+
+                                        @case('3')
+                                            Débito
+                                        @break
+
+                                        @case('4')
+                                            Crédito
+                                        @break
+                                    @endswitch
+
                                 </td>
                             </tr>
                             <tr class="bg-cyan-100 border-b border-cyan-500">
@@ -46,6 +64,15 @@
                                 </th>
                                 <td class="px-6 py-4">
                                     {{ $detail_order->concertDates->name }}
+                                </td>
+                            </tr>
+                            <tr class="bg-cyan-100 border-b border-cyan-500">
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Fecha del concierto
+                                </th>
+                                <td class="px-6 py-4">
+                                    {{date('d/m/Y', strtotime( $detail_order->concertDates->date) )}}
                                 </td>
                             </tr>
                             <tr class="bg-cyan-100 border-b border-cyan-500">
@@ -63,7 +90,8 @@
                                     Total pagado
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{ $detail_order->total }}
+                                    {{ '$'.number_format($detail_order->total, 0, ',', '.') }}
+
                                 </td>
                             </tr>
                         </tbody>

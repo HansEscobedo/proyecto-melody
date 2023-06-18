@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 class VoucherController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function pdf()
     {
 
@@ -62,6 +65,7 @@ class VoucherController extends Controller
             'user' => $user,
             'detail_order' => $detail,
             'date' => date("d-m-Y"),
+
         ];
 
         $view_html = view('receipt_pdf', $data)->render();  //crear vista pdf ---10/06/23
@@ -73,7 +77,7 @@ class VoucherController extends Controller
         $domPDF->render();
 
         // Generar nombre de archivo aleatorio
-        $filename = 'user_' . Str::random(10) . '.pdf';
+        $filename = 'comprobante'.'.pdf';
 
         // Guardar el PDF en la carpeta public
         $path = 'pdfs\\' . $filename;

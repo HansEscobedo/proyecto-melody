@@ -72,13 +72,35 @@
             <span>{{ $detail_order->concertDates->name }}</span>
         </p>
         <p>Fecha del concierto:
-            <span>{{ $detail_order->concertDates->date }}</span>
+            <span>{{date('d/m/Y', strtotime( $detail_order->concertDates->date) )}}</span>
+        </p>
+        <p>Método de pago:
+            <span>
+                @switch($detail_order->payment_method)
+                                        @case('1')
+                                            Efectivo
+                                        @break
+
+                                        @case('2')
+                                            Transferencia
+                                        @break
+
+                                        @case('3')
+                                            Débito
+                                        @break
+
+                                        @case('4')
+                                            Crédito
+                                        @break
+                                    @endswitch
+            </span>
         </p>
         <p>Cantidad de entradas:
             <span>{{ $detail_order->quantity }}</span>
         </p>
         <p>Valor Entrada:
-            <span>{{ $detail_order->concertDates->ticket_price }}</span>
+            <span>{{ '$'.number_format($detail_order->concertDates->ticket_price, 0, ',', '.') }}</span>
+
         </p>
     </div>
     <hr>
@@ -93,7 +115,7 @@
     </div>
     <hr>
     <div class="total">
-        <p class="total-pay">Total pagado: {{ $detail_order->total }}</p>
+        <p class="total-pay">Total pagado: {{ '$'.number_format($detail_order->total, 0, ',', '.')  }}</p>
         <p class="method-pay">{{ $detail_order->payment_method }}</p>
     </div>
 </body>
