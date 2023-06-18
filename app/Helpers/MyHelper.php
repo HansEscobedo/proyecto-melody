@@ -1,10 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-use Carbon\Carbon;
-use App\Models\Concert;
-
-=======
 use Carbon\Carbon;
 use App\Models\Concert;
 
@@ -13,17 +7,12 @@ use App\Models\Concert;
 
 
 
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
 function makeMessages()
 {
     $messages = [
         'name.required' => 'Debe completar el campo Nombre.',
         'name.min' => 'El largo del nombre es inferior a :min caracteres',
-<<<<<<< HEAD
-        'name.alpha' => 'El nombre contiene carácteres no permitidos. Ingrese solo letras',
-=======
         'name.regex' => 'El nombre contiene caracteres no permitidos. Ingrese solo letras',
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
         'email.required' => 'Debe completar el campo Correo electrónico',
         'email.unique' => 'El correo ingresado ya existe en el sistema, intente iniciar sesión',
         'email.email' => 'El correo no es válido',
@@ -74,8 +63,6 @@ function existConcertDay($concertDate)
 
     return false;
 }
-<<<<<<< HEAD
-=======
 
 function verifyStock($id, $quantity)
 {
@@ -95,7 +82,6 @@ function discountStock($id, $quantity)
     $concert->save();
     return true;
 }
->>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
 
 function generateReservationNumber()
 {
