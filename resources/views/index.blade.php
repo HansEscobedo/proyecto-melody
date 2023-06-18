@@ -43,10 +43,7 @@
                 <span class="sr-only">Search</span>
             </a>
         </div>
-        @error('date_search')
-            <p class="p-2 my-2 text-lg text-center text-white bg-red-500 rounded-lg">
-                {{ $message }}</p>
-        @enderror
+
     </form>
     @if ($concerts->count() > 0)
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3">

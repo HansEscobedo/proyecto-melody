@@ -32,7 +32,7 @@
                     <button type="submit" class="font-bold uppercase transition hover:text-white">Cerrar Sesión</button>
                 </form>
             @endauth
-            @guest
+            {{--@guest
                 <a href="{{route('dashboard')}}" class="text-2xl font-black uppercase">
                     <img src="https://drive.google.com/uc?id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" class="h-20 rounded w-30">
                 </a>
@@ -41,7 +41,7 @@
                     <a href="{{ route('login') }}" class="font-bold uppercase hover:text-white">Iniciar Sesión</a>
                     <a href="{{ route('register') }}" class="font-bold uppercase hover:text-white">Crear Cuenta</a>
                 </nav>
-            @endguest
+            @endguest--}}
         </div>
     </header>
     <main class="container mx-auto mt-10">
@@ -53,4 +53,5 @@
         Melody - Todos los derechos reservados {{ now()->year }}
     </footer>
 </body>
+    @yield('script')
 </html>

@@ -81,7 +81,7 @@ function verifyStock($id, $quantity)
 {
     $concert = Concert::find($id);
 
-    if ($quantity > $concert->stock) {
+    if ($quantity > $concert->tickets_on_sale){
         return false;
     }
     return true;
@@ -91,8 +91,28 @@ function discountStock($id, $quantity)
 {
     $concert = Concert::find($id);
 
-    $concert->stock -= $quantity;
+    $concert->tickets_on_sale -= $quantity;
     $concert->save();
     return true;
 }
 >>>>>>> ffc1eac778460e648ccafec0bff6655e55f1d972
+
+function generateReservationNumber()
+{
+    do {
+        $number = mt_rand(1000, 9999);
+        // ejecutar foreach
+    } while (substr($number, 0, 1) === '0');
+
+    return $number;
+}
+
+function generateReservationNumber()
+{
+    do {
+        $number = mt_rand(1000, 9999);
+        // ejecutar foreach
+    } while (substr($number, 0, 1) === '0');
+
+    return $number;
+}
