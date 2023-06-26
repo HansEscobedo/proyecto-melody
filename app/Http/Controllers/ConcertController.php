@@ -68,28 +68,34 @@ class ConcertController extends Controller
     public function searchDate(Request $request)
     {
 
-
-
+        $totalConcert=Concert::getConcerts();
+        $currentDate = date('Y-m-d'); // Obtener la fecha actual en formato 'YYYY-MM-DD'
         $date = date($request->date_search);
-        if ($date == null) {
-            $concerts = Concert::getConcerts();
-            return view('index', [
-                'concerts' => $concerts,
-            ]);
+
+        if ($date == null || $date <= $currentDate) {
+            $concerts = Concert::where('date', '>', $currentDate)->get();
+
         } else {
             $concerts = Concert::where('date', "=", $date)->simplePaginate(1);
-            return view('index', [
-                'concerts' => $concerts
-            ]);
+
+
         }
+
+        return view('index', [
+            'concerts' => $concerts,
+            'totalConcert' => $totalConcert
+        ]);
     }
 
 
     public function concertsList()
     {
-        $concerts = Concert::getConcerts();
+        $totalConcert=Concert::getConcerts();
+        $currentDate = date('Y-m-d');
+        $concerts = Concert::where('date', '>', $currentDate)->get();
         return view('index', [
             'concerts' => $concerts,
+            'totalConcert' => $totalConcert
         ]);
     }
 

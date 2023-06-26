@@ -8,7 +8,7 @@
 @section('content')
 
     @if ($user->concertsClient->count() > 0)
-        <h2 class="font-bold mb-10 text-3xl text-white text-center">Mis Conciertos</h2>
+        <h2 class="font-bold mb-10 text-3xl text-black text-center">Mis Conciertos</h2>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -119,11 +119,12 @@
                                     @endswitch
                                 </p>
                             </td>
-                            {{--<td class="px-6 py-4">
+                            <td class="px-6 py-4">
                                 <a class="w-auto h-auto" href="{{ route('pdf.descargar', ['id' => $detail_order->voucher->id]) }}">
-                                    <img class="mx-auto" src="{{ asset('img/pdf.png') }}" alt="pdf-image">
+                                    <p class="text-center text-blue-custom-700 ">DESCARGAR</p>
                                 </a>
-                            </td>--}}
+
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

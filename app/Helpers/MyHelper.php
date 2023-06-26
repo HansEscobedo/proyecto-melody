@@ -29,7 +29,9 @@ function makeMessages()
         'ticket_price.required' => 'Debe completar el campo Costo de las entradas',
         'ticket_price.min' => 'El valor de la entrada no puede ser inferior a $20.000 pesos',
         'ticket_price.max' => 'El valor de la entrada supera el máximo',
-        'ticket_price.numeric' => 'El valor ingresado no es numérico'
+        'ticket_price.numeric' => 'El valor ingresado no es numérico',
+        'quantity.required'=>'Seleccione una cantidad de entrada',
+        'pay_method.required'=>'Seleccione un método de pago'
     ];
 
     return $messages;

@@ -16,6 +16,9 @@ class DetailOrderController extends Controller
     {
         //
     }
+    public function __construct(){
+        $this->middleware('auth');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -58,7 +61,7 @@ class DetailOrderController extends Controller
         $detail_order = DetailOrder::create([
             'reservation_number' => $request->reservation_number,
             'quantity' => $request->quantity,
-            'total' => $request->total*$request->quantity,
+            'total' => $request->total,
             'payment_method' => $request->pay_method,
             'user_id' => auth()->user()->id,
             'concert_id' => $id
