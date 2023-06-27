@@ -94,7 +94,7 @@
                             {{-- Total Pagado --}}
                             <td class="px-6 py-4">
                                 <p class="text-center">
-                                    {{ $detail_order->total }}
+                                    {{ '$'.number_format($detail_order->total, 0, ',', '.')  }}
                                 </p>
                             </td>
                             {{-- Medio Pago --}}

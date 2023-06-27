@@ -4,11 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        footer {
-            position: absolute;
-            bottom: 30;
-            width: 100%;
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
+        main {
+            flex: 1;
+        }
+
+        footer {
+            flex-shrink: 0;
         }
 
         .text-center {
@@ -32,16 +39,6 @@
                     <button type="submit" class="font-bold uppercase transition hover:text-white">Cerrar Sesión</button>
                 </form>
             @endauth
-            {{--@guest
-                <a href="{{route('dashboard')}}" class="text-2xl font-black uppercase">
-                    <img src="https://drive.google.com/uc?id=1J0CL4IOjiCvZNStaMo4LFEVW96085all" class="h-20 rounded w-30">
-                </a>
-                <nav class="flex flex-col items-center gap-2">
-                    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-                    <a href="{{ route('login') }}" class="font-bold uppercase hover:text-white">Iniciar Sesión</a>
-                    <a href="{{ route('register') }}" class="font-bold uppercase hover:text-white">Crear Cuenta</a>
-                </nav>
-            @endguest--}}
         </div>
     </header>
     <main class="container mx-auto mt-10">
@@ -49,7 +46,7 @@
         @yield('content')
     </main>
     <footer class="p-5 font-bold text-center text-gray-900 uppercase ">
-        <br><br><br><br><br><br><br><br><br><br>
+
         Melody - Todos los derechos reservados {{ now()->year }}
     </footer>
 </body>

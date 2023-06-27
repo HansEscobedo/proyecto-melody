@@ -47,7 +47,7 @@ class RegisterController extends Controller
         ]);
 
         // Redireccionar al usuario
-        //toastr()->success('¡Te has registrado en Melody!', 'Inicia Sesión Ahora');
+        toastr()->success('¡Te has registrado en Melody!', 'Inicia Sesión Ahora');
         return redirect()->route('login');
 
 

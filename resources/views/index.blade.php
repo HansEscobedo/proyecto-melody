@@ -44,7 +44,9 @@
             </a>
         </div>
     </form>
-    @if ($totalConcert->count() > 0)
+    @if($search === 1 && $totalConcert->count() === 0)
+        <p class="text-2xl font-bold text-center text-black">No hay conciertos disponibles para el día seleccionado, intenta con otra fecha o recarga la página</p>
+    @elseif ($totalConcert->count() > 0)
 
         @if ($concerts->count() > 0)
             <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
@@ -70,7 +72,8 @@
                             </p>
 
                             <p class="font-semibold tracking-tight text-center text-gray-900 text-md">
-                                Valor de la entrada: {{ '$' . $concert->ticket_price }}
+
+                                {{ '$'.number_format($concert->ticket_price, 0, ',', '.')  }}
                             </p>
                             <span class="text-xl text-gray-900">
                             </span>
