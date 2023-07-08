@@ -18,7 +18,7 @@
             </div>
 
             <div>
-                <a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Buscar
+                <a href="{{route('clients')}}" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Buscar
                     Cliente</a>
             </div>
 

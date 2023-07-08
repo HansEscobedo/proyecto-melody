@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Concert;
+use App\Models\User;
+use App\Models\DetailOrder;
 use Illuminate\Http\Request;
 
 class ConcertController extends Controller
@@ -107,6 +109,36 @@ class ConcertController extends Controller
         // dd(auth()->user());
         return view('my_concerts', [
             'user' => auth()->user()
+        ]);
+    }
+
+    public function clients()
+    {
+        $client = null;
+        return view('clients', [
+            'message' => null,
+            'client' => $client,
+            'detail_orders' => null
+        ]);
+    }
+
+    public function searchClient(Request $request)
+    {
+        $email = $request->email_search;
+        $client = User::where('email', "=",$email)->first();
+        if(!$client){
+            return view('clients', [
+                'message' => 'El correo elecrónico no existe',
+                'client' => $client,
+                'detail_orders' => null
+            ]);
+        }
+
+        $detail_orders = DetailOrder::where('user_id', $client->id)->get();
+        return view('clients', [
+            'message' => null,
+            'client' => $client,
+            'detail_orders' => $detail_orders
         ]);
     }
 }

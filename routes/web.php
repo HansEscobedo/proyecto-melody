@@ -49,18 +49,20 @@ Route::get('/dashboard', [ConcertController::class, 'index'])->name('dashboard')
 
 
 // Voucher
-Route::get('/detail-order/{id}', [VoucherController::class, 'generatePDF'])->name('generate.pdf');
+
 Route::get('descargar-pdf/{id}', [VoucherController::class, 'downloadPDF'])->name('pdf.descargar');
 Route::get('/pdf', [VoucherController::class, 'pdf'])->name('pdf.example');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('createConcert', [ConcertController::class, 'create'])->name('create_concert');
     Route::post('createConcert', [ConcertController::class, 'store'])->name('createConcert');
+    Route::get('/client', [ConcertController::class, 'clients'])->name('clients');
+    Route::get('/client-search', [ConcertController::class, 'searchClient'])->name('client.search');
 });
 
 Route::middleware(['auth', 'client'])->group(function () {
-    Route::post('concert-search', [ConcertController::class, 'searchDate'])->name('concert.search');
-
+    Route::get('concert-search', [ConcertController::class, 'searchDate'])->name('concert.search');
+    Route::get('/detail-order/{id}', [VoucherController::class, 'generatePDF'])->name('generate.pdf');
     Route::get('/concert-list', [ConcertController::class, 'concertsList'])->name('concert.list');
 
     // Order Concerts

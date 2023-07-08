@@ -13,7 +13,7 @@
 
 @section('content')
 
-    <form action="{{ route('concert.search') }}" method="POST" class="my-12">
+    <form action="{{ route('concert.search') }}" method="GET" class="my-12">
         @csrf
         <div class="flex items-center justify-center"> <!-- Agregar la clase "justify-center" para centrar -->
             <label for="date" class="sr-only">Search</label>
