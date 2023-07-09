@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Concert;
+use App\Models\User;
+use App\Models\DetailOrder;
 use Illuminate\Http\Request;
 
 class ConcertController extends Controller
@@ -67,7 +69,7 @@ class ConcertController extends Controller
 
     public function searchDate(Request $request)
     {
-
+        $search = 1;
         $totalConcert=Concert::getConcerts();
         $currentDate = date('Y-m-d'); // Obtener la fecha actual en formato 'YYYY-MM-DD'
         $date = date($request->date_search);
@@ -83,17 +85,22 @@ class ConcertController extends Controller
 
         return view('index', [
             'concerts' => $concerts,
-            'totalConcert' => $totalConcert
+            'totalConcert' => $totalConcert,
+            'search' => $search
         ]);
     }
 
 
     public function concertsList()
     {
+        $search = 0;
         $currentDate = date('Y-m-d');
+        $totalConcert=Concert::where('date', '>', $currentDate)->get();
         $concerts = Concert::where('date', '>', $currentDate)->get();
         return view('index', [
             'concerts' => $concerts,
+            'totalConcert' => $totalConcert,
+            'search' => $search
         ]);
     }
 
@@ -102,6 +109,36 @@ class ConcertController extends Controller
         // dd(auth()->user());
         return view('my_concerts', [
             'user' => auth()->user()
+        ]);
+    }
+
+    public function clients()
+    {
+        $client = null;
+        return view('clients', [
+            'message' => null,
+            'client' => $client,
+            'detail_orders' => null
+        ]);
+    }
+
+    public function searchClient(Request $request)
+    {
+        $email = $request->email_search;
+        $client = User::where('email', "=",$email)->first();
+        if(!$client){
+            return view('clients', [
+                'message' => 'El correo elecrónico no existe',
+                'client' => $client,
+                'detail_orders' => null
+            ]);
+        }
+
+        $detail_orders = DetailOrder::where('user_id', $client->id)->get();
+        return view('clients', [
+            'message' => null,
+            'client' => $client,
+            'detail_orders' => $detail_orders
         ]);
     }
 }
