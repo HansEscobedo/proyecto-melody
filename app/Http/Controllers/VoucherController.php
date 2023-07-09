@@ -77,7 +77,7 @@ class VoucherController extends Controller
         $domPDF->render();
 
         // Generar nombre de archivo aleatorio
-        $filename = 'comprobante'.'.pdf';
+        $filename = 'comprobante_'. $detail->id .'.pdf';
 
         // Guardar el PDF en la carpeta public
         $path = 'pdfs\\' . $filename;

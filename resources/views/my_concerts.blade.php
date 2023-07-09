@@ -8,7 +8,7 @@
 @section('content')
 
     @if ($user->concertsClient->count() > 0)
-        <h2 class="font-bold mb-10 text-3xl text-white text-center">Mis Conciertos</h2>
+        <h2 class="font-bold mb-10 text-3xl text-black text-center">Mis Conciertos</h2>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -94,7 +94,7 @@
                             {{-- Total Pagado --}}
                             <td class="px-6 py-4">
                                 <p class="text-center">
-                                    {{ $detail_order->total }}
+                                    {{ '$'.number_format($detail_order->total, 0, ',', '.')  }}
                                 </p>
                             </td>
                             {{-- Medio Pago --}}
@@ -121,8 +121,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a class="w-auto h-auto" href="{{ route('pdf.descargar', ['id' => $detail_order->voucher->id]) }}">
-
-                                    <p class="text-2xl font-bold text-center text-black">Descargar</p>
+                                    <p class="text-center text-blue-custom-700 ">DESCARGAR</p>
                                 </a>
 
                             </td>

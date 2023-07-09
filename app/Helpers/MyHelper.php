@@ -94,4 +94,3 @@ function generateReservationNumber()
 
     return $number;
 }
-
