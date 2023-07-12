@@ -58,6 +58,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('createConcert', [ConcertController::class, 'store'])->name('createConcert');
     Route::get('/client', [ConcertController::class, 'clients'])->name('clients');
     Route::get('/client-search', [ConcertController::class, 'searchClient'])->name('client.search');
+    Route::get('/concerts', [ConcertController::class, 'allConcerts'])->name('concerts');
+    Route::get('/concert-clients/{id}', [ConcertController::class, 'concertClients'])->name('concert.clients');
 });
 
 Route::middleware(['auth', 'client'])->group(function () {
@@ -69,4 +71,7 @@ Route::middleware(['auth', 'client'])->group(function () {
     Route::get('/concert-order/{id}', [DetailOrderController::class, 'create'])->name('concert.order');
     Route::post('/concert-order/{id}', [DetailOrderController::class, 'store'])->name('concert.order.pay');
     Route::get('/my-concerts', [ConcertController::class, 'myConcerts'])->name('client.concerts');
+
+
 });
+
