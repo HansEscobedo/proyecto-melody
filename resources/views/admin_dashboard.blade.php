@@ -26,10 +26,16 @@
                 <a href="{{ route('collection.index') }}" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Desplegar
                     Recaudación</a>
             </div>
-
+            {{-- Compras Realizadas --}}
             <div>
-                <a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Visualizar
-                    Compras</a>
+                {{--<a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Visualizar
+                    Compras</a>--}}
+
+                <a  href="{{ route('concerts') }}"
+                    class="text-center text-black font-bold p-3 bg-red-500 hover:bg-red-800 rounded transition-all">Compras
+                    Realizadas
+                </a>
+
             </div>
         </div>
     </div>

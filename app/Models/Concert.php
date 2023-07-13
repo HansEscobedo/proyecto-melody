@@ -12,6 +12,7 @@ class Concert extends Model
         'name',
         'date',
         'tickets_on_sale',
+        'current_tickets',
         'ticket_price'
     ];
     public static function getConcerts()

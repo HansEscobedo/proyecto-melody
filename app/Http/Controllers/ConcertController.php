@@ -59,6 +59,7 @@ class ConcertController extends Controller
             'name' => $request->name,
             'date' => $request->date,
             'tickets_on_sale' => $request->tickets_on_sale,
+            'current_tickets'=>$request->tickets_on_sale,
             'ticket_price' => $request->ticket_price
         ]);
 
@@ -140,5 +141,29 @@ class ConcertController extends Controller
             'client' => $client,
             'detail_orders' => $detail_orders
         ]);
+    }
+    public function allConcerts()
+    {
+        $concerts = Concert::withSum('detailOrder', 'total')->get();
+        return view('concerts', compact('concerts'));
+    }
+
+    public function concertClients($id)
+    {
+
+        $concert = Concert::find($id);
+
+        // Obtener los detalles de orden para el concierto seleccionado mediante su id
+        $detail_orders = DetailOrder::where('concert_id', $id)->orderBy('created_at', 'asc')->get();
+
+        // Obtener los usuarios relacionados con los detalles de orden
+        $clients = User::whereIn('id', $detail_orders->pluck('user_id'))->get();
+
+
+        return view(
+            'concert_clients',
+
+            compact('detail_orders', 'clients', 'concert')
+        );
     }
 }
