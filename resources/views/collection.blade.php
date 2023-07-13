@@ -16,15 +16,16 @@
     @else
         <div id="chartContainer" class="flex flex-col items-center">
             <div id="chart" class="mb-8">
-                <h3 class="mb-4 text-lg font-semibold text-center">Total Vendido por Concierto (Gráfico de Barras)</h3>
+                <h3 class="mb-4 text-lg font-semibold text-center" style="font-size: 32px;">Total Vendido por Concierto</h3>
                 <canvas id="myChartBarConcerts"></canvas>
-
+            <br>
             <div id="chart" class="mb-8">
-                <h3 class="mb-4 text-lg font-semibold text-center">Total Vendido por Método de Pago (Gráfico de Barras)</h3>
+                <h3 class="mb-4 text-lg font-semibold text-center" style="font-size: 32px;">Total Vendido por Método de Pago</h3>
                 <canvas id="myChartBarPayment"></canvas>
             </div>
+            <br>
             <div id="chart">
-                <h3 class="mb-4 text-lg font-semibold text-center">Total Vendido por Método de Pago (Gráfico de Pie)</h3>
+                <h3 class="mb-4 text-lg font-semibold text-center" style="font-size: 32px;">Total Vendido por Método de Pago</h3>
                 <canvas id="myChartPiePayment"></canvas>
             </div>
 

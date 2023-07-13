@@ -5,10 +5,17 @@
 @endsection
 
 @section('content')
+    <div class="flex-row justify-end">
+        <a href="{{ route('dashboard') }}" type="button"
+            class="p-2.5 ml-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            Volver
+        </a>
+    </div>
+    <br>
     @if ($concerts->count())
         <div class="relative shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-500 ">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             <p class="text-center">
@@ -50,10 +57,10 @@
                 <tbody>
                     @foreach ($concerts as $concert)
                         <tr
-                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            class="bg-white border-b hover:bg-gray-50 ">
                             {{-- Nombre Concierto --}}
                             <td scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                 <p class="text-center">
                                     {{ $concert->name }}
                                 </p>
@@ -107,7 +114,7 @@
                                     </a>
 
                                     {{--<div id="tooltip-right-conciertos" role="tooltip"
-                                        class="text-center absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                                         Visualiza el listado de conciertos
                                         <br>
                                         que ofrece Melody.
@@ -125,6 +132,6 @@
             </table>
         </div>
     @else
-        <p class="text-2xl text-white text-center font-bold">no hay conciertos por mostrar</p>
+        <p class="text-2xl font-bold text-center text-black">No hay conciertos por mostrar</p>
     @endif
 @endsection
