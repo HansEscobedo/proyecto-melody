@@ -23,7 +23,7 @@
             </div>
 
             <div>
-                <a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Desplegar
+                <a href="{{ route('collection.index') }}" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Desplegar
                     Recaudación</a>
             </div>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ConcertController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\CollectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('createConcert', [ConcertController::class, 'store'])->name('createConcert');
     Route::get('/client', [ConcertController::class, 'clients'])->name('clients');
     Route::get('/client-search', [ConcertController::class, 'searchClient'])->name('client.search');
+
+    // Collection
+    Route::get('/collection', [CollectionController::class, 'index'])->name('collection.index');
+
+    Route::get('/all-concert-sales', [CollectionController::class, 'allConcertsTotalSales']);
+    Route::get('/all-detail-orders', [CollectionController::class, 'allDetailOrders']);
 });
 
 Route::middleware(['auth', 'client'])->group(function () {
