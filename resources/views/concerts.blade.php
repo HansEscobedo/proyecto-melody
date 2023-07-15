@@ -5,14 +5,20 @@
 @endsection
 
 @section('content')
-    <div class="flex-row justify-end">
+    <div class="flex-row justify-center">
+        <h2 class="text-center text-gray-700 text-3xl font-bold uppercase my-10 mb-6">Lista de conciertos</h2>
+    </div>
+    <div class="flex items-center justify-center">
         <a href="{{ route('dashboard') }}" type="button"
             class="p-2.5 ml-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
             Volver
         </a>
     </div>
+
+
     <br>
     @if ($concerts->count())
+
         <div class="relative shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -99,7 +105,7 @@
                             <td class="px-6 py-4">
                                 <p class="text-center">
                                     @if ($concert->detail_order_sum_total)
-                                        {{ $concert->detail_order_sum_total }}
+                                        {{'$'.number_format($concert->detail_order_sum_total, 0, ',', '.') }}
                                     @else
                                         -
                                     @endif

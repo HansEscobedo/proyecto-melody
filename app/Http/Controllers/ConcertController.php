@@ -129,7 +129,7 @@ class ConcertController extends Controller
         $client = User::where('email', "=",$email)->first();
         if(!$client){
             return view('clients', [
-                'message' => 'El correo elecrónico no existe',
+                'message' => 'El correo electrónico no existe',
                 'client' => $client,
                 'detail_orders' => null
             ]);
