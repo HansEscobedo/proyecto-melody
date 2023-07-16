@@ -18,18 +18,20 @@
             </div>
 
             <div>
-                <a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Buscar
+                <a href="{{route('clients')}}" class="p-3 font-bold text-center text-white transition rounded bg-blue-custom-700 hover:bg-blue-custom-1000">Buscar
                     Cliente</a>
             </div>
 
             <div>
-                <a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Desplegar
+                <a href="{{ route('collection.index') }}" class="p-3 font-bold text-center text-white transition rounded bg-blue-custom-700 hover:bg-blue-custom-1000"">Desplegar
                     Recaudación</a>
             </div>
-
             <div>
-                <a href="#" class="p-3 font-bold text-center text-white bg-blue-700 rounded ">Visualizar
-                    Compras</a>
+                <a  href="{{ route('concerts') }}"
+                    class="p-3 font-bold text-center text-white transition rounded bg-blue-custom-700 hover:bg-blue-custom-1000">Compras
+                    Realizadas
+                </a>
+
             </div>
         </div>
     </div>

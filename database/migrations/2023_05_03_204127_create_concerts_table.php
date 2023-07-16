@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('date');
             $table->integer('tickets_on_sale');
+            $table->integer('current_tickets');//se agrego
             $table->integer('ticket_price');
             $table->timestamps();
         });

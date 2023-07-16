@@ -12,7 +12,6 @@
 @endpush
 
 @section('content')
-
     <form action="{{ route('concert.search') }}" method="GET" class="my-12">
         @csrf
         <div class="flex items-center justify-center"> <!-- Agregar la clase "justify-center" para centrar -->
@@ -42,6 +41,12 @@
                 </svg>
                 <span class="sr-only">Search</span>
             </a>
+            <div>
+                <a href="{{ route('dashboard') }}" type="button"
+                    class="p-2.5 ml-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                    Volver
+                </a>
+            </div>
         </div>
     </form>
     @if($search === 1 && $totalConcert->count() === 0)
