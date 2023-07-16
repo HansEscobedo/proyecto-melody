@@ -191,7 +191,7 @@ function generateCharts() {
                         return total + datapoint
                     }
                     const porcentajeTotal = datapoints.reduce(sumaTotal, 0);
-                    const valorPorcentaje = (value / porcentajeTotal * 100).toFixed(1);
+                    const valorPorcentaje = (value / porcentajeTotal * 100).toFixed(2);
                     const despliegue = [`${valorPorcentaje}%`]
                     return despliegue;
                   }

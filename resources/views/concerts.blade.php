@@ -116,7 +116,7 @@
                                 <td class="px-6 py-4">
 
                                     <a class="w-auto h-auto" href="{{ route('concert.clients', ['id' => $concert->id]) }}">
-                                        <p class="text-center text-blue-custom-700 ">Ver</p>
+                                        <p class="text-center text-blue-custom-700 ">Ver Detalles</p>
                                     </a>
 
                                     {{--<div id="tooltip-right-conciertos" role="tooltip"
