@@ -61,8 +61,17 @@ function generateCharts() {
             x: {
               ticks: {
                 autoSkip: false,
-                maxRotation: 0,
-                minRotation: 0
+                maxRotation: labelsConcerts.length > 7 ? 90 : 0,
+                minRotation: labelsConcerts.length > 7 ? 90 : 0,
+                callback: function (value) {
+                    const truncatedLabel = this.getLabelForValue(value).substr(0, 10); // Trunca los nombres a 10 caracteres
+                    if (truncatedLabel.length < this.getLabelForValue(value).length) {
+                      return truncatedLabel + '...'; // Agrega "..." al final si el nombre se truncó
+                    }
+                    return truncatedLabel;
+                }
+
+
               }
             },
             y: {

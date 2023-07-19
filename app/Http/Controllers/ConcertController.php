@@ -142,7 +142,7 @@ class ConcertController extends Controller
     }
     public function allConcerts()
     {
-        $concerts = Concert::withSum('detailOrder', 'total')->get();
+        $concerts = Concert::withSum('detailOrder', 'total')->orderBy('date', 'asc')->get();
         return view('concerts', compact('concerts'));
     }
 
