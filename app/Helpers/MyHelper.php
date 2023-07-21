@@ -85,7 +85,7 @@ function discountStock($id, $quantity)
     return true;
 }
 
-function generateReservationNumber()
+function generateReservationNumber($attempts)
 {
     $number = null;
 
