@@ -91,11 +91,11 @@ function generateReservationNumber($attempts)
     $number = null;
 
     do {
-        $number = mt_rand(1000, 1003);
+        $number = mt_rand(1000, 9999);
         // ejecutar foreach
     } while (substr($number, 0, 1) === '0');
 
-    $maxAttempts = 4; // Número máximo de intentos para encontrar un número no utilizado
+    $maxAttempts = 9000; // Número máximo de intentos para encontrar un número no utilizado
 
 
     while ($attempts < $maxAttempts) {
