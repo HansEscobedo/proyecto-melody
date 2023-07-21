@@ -37,7 +37,12 @@ class DetailOrderController extends Controller
     public function store(Request $request, $id)
     {
 
-        $reservation_number = generateReservationNumber();
+        $reservation_number = generateReservationNumber(0);
+
+        if ($reservation_number === null) {
+            toastr()->error('No se pudo generar un numero de reserva', '¡Error!');
+            return redirect()->route('dashboard');
+        }
 
         //Modificar request
         $request->request->add(['reservation_number' => $reservation_number]);

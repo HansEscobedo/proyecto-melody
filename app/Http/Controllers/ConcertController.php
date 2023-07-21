@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Concert;
+use App\Models\DetailOrder;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ConcertController extends Controller

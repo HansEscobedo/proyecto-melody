@@ -1,10 +1,7 @@
 <?php
 use Carbon\Carbon;
 use App\Models\Concert;
-
-
-
-
+use App\Models\DetailOrder;
 
 
 function makeMessages()
@@ -85,12 +82,30 @@ function discountStock($id, $quantity)
     return true;
 }
 
-function generateReservationNumber()
+function generateReservationNumber($attempts)
 {
+    $number = null;
+
     do {
         $number = mt_rand(1000, 9999);
         // ejecutar foreach
     } while (substr($number, 0, 1) === '0');
 
-    return $number;
+    $maxAttempts = 9000; // Número máximo de intentos para encontrar un número no utilizado
+
+
+    while ($attempts < $maxAttempts) {
+        $detailOrder = DetailOrder::where('reservation_number', $number)->first();
+
+        if (!$detailOrder) {
+            // Si no se encontró una reserva con este número, entonces es válido y lo podemos retornar
+            return $number;
+        }
+
+        $attempts++;
+        $number = generateReservationNumber($attempts); // Generar un nuevo número
+    }
+
+    // Si se alcanza el número máximo de intentos sin encontrar un número no utilizado, retornamos null
+    return null;
 }
