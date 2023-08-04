@@ -40,7 +40,7 @@ class DetailOrderController extends Controller
         $reservation_number = generateReservationNumber(0);
 
         if ($reservation_number === null) {
-            toastr()->error('No se pudo generar un numero de reserva', '¡Error!');
+            toastr()->error('No se pudo generar un número de reserva', '¡Error!');
             return redirect()->route('dashboard');
         }
 
