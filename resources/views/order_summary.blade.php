@@ -9,7 +9,7 @@
     {{-- Detalle de la compra --}}
     <div class="flex flex-col items-center">
         <div class="w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div class="bg-cyan-600 p-10 rounded-t-lg"">
+            <div class="bg-cyan-600 p-10 rounded-t-lg">
                 <p class="text-xl text-white text-center">Tu pago ha sido <br> <span class="font-bold text-2xl">realizado con
                         éxito</span></p>
             </div>

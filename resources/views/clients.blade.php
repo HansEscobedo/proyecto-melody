@@ -6,11 +6,11 @@
 
 @section('content')
 
-    <form action="{{ route('client.search') }}" method="GET" class="my-12">
+    <form action="{{ route('client.search') }}" method="GET" class="my-12 mb-2">
         <div class="flex items-center justify-center">
             <label for="email_search" class="sr-only">Search</label>
             <div class="relative w-80">
-                <input type="search" id="email_search" name="email_search" placeholder="Ingresa un correo electrónico a buscar" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <input type="search" id="email_search" name="email_search" placeholder="Ingresa un correo electrónico a buscar" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
             <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
             <div>
